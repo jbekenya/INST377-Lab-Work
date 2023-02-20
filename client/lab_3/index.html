@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Josephine Ekenya's Labs For INST377</title>
   <link rel='stylesheet' href='style.css'/>
+  <script src="/path/to/script.js"></script>
 </head>
 <body>
   <div class="wrapper">
@@ -23,24 +24,23 @@
       </div>
       <div class="right_section box">
         <h2 class="subtitle">Image Carousel</h2>
-        <div class="grid">
-          <div class="carousel">
-            <div class="slides">
-              <img src='images/image1.jpeg' alt='flowers' width='75' alt='mochi gif'>
-              <img src='images/image2.jpeg' alt='Flower field' width='75' alt='mochi jpg'>
-              <img src='images/image3.jpeg' alt='two sunflowers' width='75'alt='mochi png'>
-              <img src='images/image4.jpeg' alt='a sunflower' width='75' alt='mochi svg'>
-            </div>
+        <div class="carousel">
+          <button class="prev">prev</button>
+          <div class="slides">
+            <div class="carousel_item visible"><img id='slide_1' src='images/image1.jpeg' alt='flowers' width='75' alt='mochi gif'></div>
+            <div class="carousel_item hidden"><img id='slide_2' src='images/image2.jpeg' alt='Flower field' width='75' alt='mochi jpg'></div>
+            <div class="carousel_item hidden"><img id='slide_3' src='images/image3.jpeg' alt='two sunflowers' width='75'alt='mochi png'></div>
+            <div class="carousel_item hidden"><img id='slide_4' src='images/image4.jpeg' alt='a sunflower' width='75' alt='mochi svg'></div>
           </div>
+          <button class="next">next</button>
         </div>
-        <div>
-          <p class="box">Images above are from the readings this week. They are all images of mochis in
+        <div class="box">
+          <p>Images above are from the readings this week. They are all images of mochis in
             different image formats sed on the web. These images formats are gif, jpg, png, and svg. 
           </p>
         </div>
+      </div>
     </div>
-    </div>
-  </div>
   <footer class="footer">
     <p>Github Account Name: jbekenya
       <a href="https://github.com/jbekenya">Github link</a>
