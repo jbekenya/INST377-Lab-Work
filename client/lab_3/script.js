@@ -62,7 +62,6 @@ function moveToPrevSlide() {
     }
   updateSlidePosition();
 }
-
 /*
   These two functions have been assigned via "addEventListener"
   to the elements accessed by the "querySelector" set to the class name on each
