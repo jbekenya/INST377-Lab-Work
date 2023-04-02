@@ -237,6 +237,9 @@ form input {
   height: 150px;
   }
   
+  .hidden{
+    display: none;
+  }
   .lds-ellipsis {
       display: inline-block;
       position: relative;

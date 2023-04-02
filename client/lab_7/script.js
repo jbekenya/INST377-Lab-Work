@@ -52,10 +52,13 @@ function getRandomInt(min, max) {
     const filterButton = document.querySelector("#filter_button");
     const loadDataButton = document.querySelector("#data_load");
     const generateListButton = document.querySelector('#generate');
-    const textField = document.querySelector('#resto')
+    const textField = document.querySelector('#resto');
     
     const loadAnimation = document.querySelector("#data_load_animation");
     loadAnimation.style.display = 'none'; 
+    generateListButton.classList.add('hidden');
+
+    let storedList = []
     let arrayFromJson = [];
   
   
@@ -94,9 +97,13 @@ function getRandomInt(min, max) {
       */
   
       // This changes the response from the GET into data we can use - an "object"
-      arrayFromJson = await results.json();
+      storedList = await results.json();
+      if (storedList.length > 0) {
+        generateListButton.classList.remove('hidden');
+      }
+      
       loadAnimation.style.display = 'none'
-      console.table(arrayFromJson); 
+      console.table(storedList); 
       
     });
   
@@ -114,13 +121,16 @@ function getRandomInt(min, max) {
   
     generateListButton.addEventListener('click', (event) => {
       console.log('generate new list');
-      const resturantsList = cutResturantList(arrayFromJson);
-      console.log(resturantsList)
-      injectHTML(resturantsList)
+      arrayFromJson = cutResturantList(storedList);
+      console.log(arrayFromJson)
+      injectHTML(arrayFromJson)
     })
 
     textField.addEventListener('input', (event)=>{
         console.log('input', event.target.value);
+        const newList = filterList(arrayFromJson, event.target.value)
+        console.log(newList);
+        injectHTML(newList)
     })
   }
   
