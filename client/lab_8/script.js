@@ -68,6 +68,7 @@ function getRandomInt(min, max) {
     array.forEach((item) => {
         console.log('markerplace', item);
         const {coordinates} = item.geocoded_column_1;
+        console.log(item.geocoded_column_1)
 
         L.marker([coordinates[1], coordinates[0]]).addTo(map);
     })
